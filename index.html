@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- /* the viewer container must have a defined size */ -->
+    <style>
+      #viewer {
+        width: 50vw;
+        height: 50vh;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Necessary Photo-Sphere-Viewer JS and CSS dependencies-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uevent@2/browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.min.js"></script>
+
+    <!-- HTML container element -->
+    <div id="viewer"></div>
+
+    <!-- JS Snippet that creates and embeds panoramic picture -->
+    <script>
+      new PhotoSphereViewer.Viewer({
+        //   location of panoramic .jpg
+        panorama: "img/Ukit040721.jpg",
+        // points to html container element
+        container: "viewer",
+        caption: "3D Kitchen Model",
+        loadingImg:
+          "https://photo-sphere-viewer.js.org/assets/photosphere-logo.gif",
+        defaultLat: 0.3,
+        touchmoveTwoFingers: true,
+        mousewheelCtrlKey: false,
+      });
+    </script>
+  </body>
+</html>
+
+<!-- Create New HTML div for each panorama instance -->
